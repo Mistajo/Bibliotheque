@@ -1,0 +1,42 @@
+{% extends "themes/base.html.twig" %}
+
+{% block title %}Bibliotheque - Nouveau livre{% endblock %}
+
+{% block main %}
+    <h1 class="text-center my-3 display-5">Nouveau livre</h1>
+
+    <div class="container">
+       <div class="col-md-6 mx-auto p-4">
+        {{form_start(form)}}
+            <div class="mb-3">
+                <label for="livre_form_title">Nom du livre </label>
+                <div class="text-danger">{{form_errors(form.title)}}</div>
+                {{form_widget(form.title, {'attr' : {'class' : 'form-control'}})}}
+            </div>
+
+              <div class="mb-3">
+                <label for="livre_form_genre">Genre </label>
+                <div class="text-danger">{{form_errors(form.genre)}}</div>
+                {{form_widget(form.genre, {'attr' : {'class' : 'form-control'}})}}
+            </div>
+
+            <div class="mb-3">
+                <label for="livre_form_author">Auteur </label>
+                <div class="text-danger">{{form_errors(form.author)}}</div>
+                {{form_widget(form.author, {'attr' : {'class' : 'form-control'}})}}
+            </div>
+
+            <div class="mb-3">
+                <label for="livre_form_note" >Note </label>
+                <div class="text-danger">{{form_errors(form.note)}}</div>
+                {{form_widget(form.note, {'attr' : {'class' : 'form-control'}})}}
+            </div>
+
+            <div class="mb-3">
+                <input formnovalidate type="submit" value="Envoyer" class="btn btn-primary">
+                </input>
+            </div>
+      {{form_end(form)}}
+    </div> 
+    </div>
+{% endblock %}
